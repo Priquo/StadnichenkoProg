@@ -49,7 +49,7 @@ namespace UserProg.pages
                     }
                 }
                 else
-                    MessageBox.Show("Ты вкурсе, что таких людей не существует?");
+                    MessageBox.Show("Ты в курсе, что таких людей не существует?");
             }
             catch
             {
