@@ -28,5 +28,33 @@ namespace UserProg.pages
         {
             LoadPages.MainFrame.Navigate(new Registration());
         }
+
+        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                auth CurrUser = BaseConnect.BaseModel.auth.FirstOrDefault(x => x.login == textboxLogin.Text && x.password == psswBox1.Password);
+                if (CurrUser != null)
+                {
+                    switch (CurrUser.role)
+                    {
+                        case 1:
+                            MessageBox.Show("Вы вошли как крутой админ");
+                            break;
+                        case 2:
+                        default:
+                            MessageBox.Show("Вы вошли как непримечательный пользователь");
+                            LoadPages.MainFrame.Navigate(new Form());
+                            break;
+                    }
+                }
+                else
+                    MessageBox.Show("Ты вкурсе, что таких людей не существует?");
+            }
+            catch
+            {
+                MessageBox.Show("Невероятно, но что-то создает ошибку, программа не работает");
+            }
+        }
     }
 }

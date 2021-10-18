@@ -21,7 +21,7 @@
                         </GroupBox>
                     </StackPanel>
                 </GroupBox>
-                <Button x:Name="buttonLogin" Content="Войти"/>
+                <Button x:Name="buttonLogin" Content="Войти" Click="buttonLogin_Click"/>
                 <Button x:Name="buttonReg" Content="Зарегистрироваться" Click="buttonReg_Click"/>
             </StackPanel>
         </ScrollViewer>
