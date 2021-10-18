@@ -25,6 +25,7 @@ namespace UserProg
         {
             InitializeComponent();
             pages.Navigate(new Login());
+            LoadPages.MainFrame = pages;
         }
     }
 }

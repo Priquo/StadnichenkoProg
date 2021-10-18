@@ -16,17 +16,18 @@ using System.Windows.Shapes;
 namespace UserProg.pages
 {
     /// <summary>
-    /// Логика взаимодействия для Login.xaml
+    /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class Registration : Page
     {
-        public Login()
+        public Registration()
         {
             InitializeComponent();
         }
-        private void buttonReg_Click(object Sender, RoutedEventArgs e)
+
+        private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
-            LoadPages.MainFrame.Navigate(new Registration());
+
         }
     }
 }
