@@ -41,7 +41,7 @@
                             <ListBox Name="lbTarits" ItemTemplate="{StaticResource cbCells}" SelectionMode="Multiple"/>
                         </StackPanel>
                     </GroupBox>
-                    <Button Template="{StaticResource CTbutt1}"/>
+                    <Button Template="{StaticResource CTbutt1}"  Click="Button_Click"/>
                     <Button Content="Назад" Name="buttonBack" Click="buttonBack_Click"/>
                 </StackPanel>
             </GroupBox>

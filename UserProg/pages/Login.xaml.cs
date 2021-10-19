@@ -40,11 +40,12 @@ namespace UserProg.pages
                     {
                         case 1:
                             MessageBox.Show("Вы вошли как крутой админ");
+                            LoadPages.MainFrame.Navigate(new AdminPage());
                             break;
                         case 2:
                         default:
                             MessageBox.Show("Вы вошли как непримечательный пользователь");
-                            LoadPages.MainFrame.Navigate(new Form());
+                            LoadPages.MainFrame.Navigate(new Form(CurrUser));
                             break;
                     }
                 }

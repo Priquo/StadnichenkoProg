@@ -9,56 +9,26 @@
       Title="Form">
 
     <Grid>
-        <ScrollViewer Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <WrapPanel>
-                <StackPanel x:Name="stPan1" HorizontalAlignment="Left">
-                    <GroupBox Header="Введите данные о себе" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
-                        <StackPanel>
-                            <GroupBox Header="Введите имя" >
-                                <TextBox Name="textboxName"/>
-                            </GroupBox>
-                            <GroupBox Header="Введите дату рождения">
-                                <DatePicker Name="datepickerData"/>
-                            </GroupBox>
-                            <GroupBox Header="Выберите пол" >
-                                <ListBox Name="listGender">
-                                    <ListBoxItem Content="Девочка"/>
-                                    <ListBoxItem Content="Мальчик"/>
-                                    <ListBoxItem Content="Свой вариант"/>
-                                </ListBox>
-                            </GroupBox>
-                            <GroupBox Header="Доп. инфо">
-                                <StackPanel>
-                                    <CheckBox Name="checkKind" IsChecked="false" Content="Добрый"/>
-                                    <CheckBox Name="checkDur" IsChecked="false"  Content="Отзывчивый"/>
-                                    <CheckBox Name="checkShy" IsChecked="false"  Content="Скромный"/>
-                                </StackPanel>
-                            </GroupBox>
-                        </StackPanel>
-                    </GroupBox>
-                    <Button x:Name="buttonWrite" Content="Записать" Width="80" HorizontalAlignment="Left" Margin="40 10 0 0"/>
-                </StackPanel>
+        <ScrollViewer Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalScrollBarVisibility="Auto">
+            <WrapPanel>                
                 <StackPanel HorizontalAlignment="Stretch">
                     <GroupBox Header="Считывание информации" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
                         <StackPanel>
                             <GroupBox Header="Имя" Margin="10 10 10 0">
-                                <Label Name="textName" Height="30"/>
+                                <TextBlock Name="textName" Height="30"/>
                             </GroupBox>
                             <GroupBox Header="Дата рождения" Margin="10 10 10 0">
-                                <Label Name="textDateBirth" Height="30"/>
+                                <TextBlock Name="textDateBirth" Height="30"/>
                             </GroupBox>
                             <GroupBox Header="Пол" Margin="10 10 10 0">
-                                <Label Name="textGender" Height="30"/>
+                                <TextBlock Name="textGender" Height="30"/>
                             </GroupBox>
                             <GroupBox Header="Дополнительная информация" Margin="10 10 10 0">
-                                <Label Name="textOtherInfo" Height="30"/>
+                                <TextBlock Name="textOtherInfo" Height="30"/>
                             </GroupBox>
                         </StackPanel>
                     </GroupBox>
-                    <StackPanel Margin="15 10" Orientation="Horizontal">
-                        <Button x:Name="buttonRead" Content="Прочитать" Margin="5"  HorizontalAlignment="Left"/>
-                        <Button x:Name="buttonNext" Margin="5" Content="Вывести следующую"/>
-                    </StackPanel>
+                    <Button x:Name="buttBack" Click="buttBack_Click" Content="Назад"/>
                 </StackPanel>
             </WrapPanel>
         </ScrollViewer>
