@@ -5,30 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserProg" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="СуперПрограмма" Height="450" Width="800">
+        Title="СуперПрограмма" Height="450" Width="800" Background="#fff5fc">
     <Window.Resources>
         <Style x:Key="Title" TargetType="Label">
             <Setter Property="FontSize" Value="50pt"/>
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="FontStyle" Value="Italic"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="reklama" BasedOn ="{StaticResource reklama}">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontFamily" Value="Yu Gothic UI Light"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="230"/>
-            <ColumnDefinition Width="575*"/>
+            <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="250*"/>
-            <RowDefinition Height="28*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.ColumnSpan="2" HorizontalAlignment="Stretch" LastChildFill="True">
-            <Image Source="images/LOGO.png" DockPanel.Dock="Left" HorizontalAlignment="Center"></Image>
-            <Label Style="{StaticResource Title}" DockPanel.Dock="Right" HorizontalContentAlignment="Center">Кричащий заголовок</Label>
+            <Image Source="images/tehn.png" DockPanel.Dock="Left" HorizontalAlignment="Center"></Image>
+            <Label Style="{StaticResource Title}" DockPanel.Dock="Right" HorizontalContentAlignment="Center">Невероятно, но факт</Label>
         </DockPanel>        
-        <Image Grid.Row="1" Source="images/banners/BANNER.png" Height="300"></Image>
-        <Label Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">$$$$Здесь могла быть ваша реклама $$$$</Label>
+        <Image Grid.Row="1" Source="images/banners/ban.jpg"></Image>
+        <TextBlock Text="Только сегодня, сеанс психотерапевта всего за $3..." Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource reklama}"/>
         <Frame x:Name="pages" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

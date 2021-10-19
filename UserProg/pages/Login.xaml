@@ -10,7 +10,7 @@
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" >
-            <StackPanel>
+            <StackPanel MaxWidth="400px">
                 <GroupBox Header="Авторизация">
                     <StackPanel>
                         <GroupBox Header="Логин" >
@@ -21,8 +21,10 @@
                         </GroupBox>
                     </StackPanel>
                 </GroupBox>
-                <Button x:Name="buttonLogin" Content="Войти" Click="buttonLogin_Click"/>
-                <Button x:Name="buttonReg" Content="Зарегистрироваться" Click="buttonReg_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="buttonLogin" Content="Войти" Click="buttonLogin_Click" IsDefault="True" Width="100px" Margin="15 10"/>
+                    <Button x:Name="buttonReg" Content="Зарегистрироваться" Click="buttonReg_Click" Width="150px" Margin="100 10"/>
+                </StackPanel>                
             </StackPanel>
         </ScrollViewer>
     </Grid>

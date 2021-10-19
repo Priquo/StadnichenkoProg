@@ -13,13 +13,13 @@
                 <GroupBox Header="Считывание информации" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
                     <StackPanel>
                         <GroupBox Header="Имя" Margin="10 10 10 0">
-                            <TextBlock Text="{Binding name}" Height="30"/>
+                            <TextBlock Text="{Binding name}" Height="30" VerticalAlignment="Center"/>
                         </GroupBox>
                         <GroupBox Header="Дата рождения" Margin="10 10 10 0">
-                            <TextBlock Text="{Binding dr}" Height="30"/>
+                            <TextBlock Text="{Binding dr}" Height="30" VerticalAlignment="Center"/>
                         </GroupBox>
                         <GroupBox Header="Пол" Margin="10 10 10 0">
-                            <TextBlock Text="{Binding genders.gender}" Height="30"/>
+                            <TextBlock Text="{Binding genders.gender}" Height="30" VerticalAlignment="Center"/>
                         </GroupBox>
                         <GroupBox Header="Дополнительная информация" Margin="10 10 10 0">
                             <ListBox Name="listb_traits" Loaded="listb_traits_Loaded" Uid="{Binding id}"/>
@@ -43,7 +43,9 @@
             </GroupBox>
             <Button Name="btGo" Content="Вывести" Click="btGo_Click" Width="50" Margin="5"/>
             <Button Name="btReset" Content="Сброс" Click="btReset_Click" Width="50" Margin="5"/>
+            <Button x:Name="buttBack" Content="Назад" IsCancel="True" Click="buttBack_Click" Width="50" Margin="150 5 5 5"/>
         </StackPanel>
         <ListBox Name="listbUsersList" ItemTemplate="{StaticResource DT_usersData}" Grid.Row="1"/>
+        
     </Grid>
 </Page>

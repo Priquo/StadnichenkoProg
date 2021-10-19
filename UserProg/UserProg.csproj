@@ -198,6 +198,8 @@
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\tehn.png" />
+    <Resource Include="images\banners\ban.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\LOGO.png" />

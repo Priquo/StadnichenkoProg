@@ -4,6 +4,19 @@
              xmlns:local="clr-namespace:UserProg"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightPink"/>
+            <Setter Property="Foreground" Value="DeepPink"/>
+            <Setter Property="FontStyle" Value="Oblique"/>
+            <Setter Property="BorderBrush" Value="DarkMagenta"/>
+            <Setter Property="MaxWidth" Value="250px"/>
+            <Setter Property="Height" Value="25px"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="reklama">
+            <Setter Property="Background" Value="PaleVioletRed"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Purple"/>
+        </Style>
     </Application.Resources>
 </Application>

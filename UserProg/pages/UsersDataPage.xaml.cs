@@ -45,5 +45,10 @@ namespace UserProg.pages
         {
             listbUsersList.ItemsSource = users;
         }
+
+        private void buttBack_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.GoBack();
+        }
     }
 }

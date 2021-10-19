@@ -33,7 +33,7 @@ namespace UserProg.pages
 
         private void buttEditUser_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("Эта функция пока в разработке... :(");
         }
 
         private void buttDeleteUser_Click(object sender, RoutedEventArgs e)
@@ -48,6 +48,16 @@ namespace UserProg.pages
         private void buttSaveCahanges_Click(object sender, RoutedEventArgs e)
         {
             BaseConnect.BaseModel.SaveChanges();
+        }
+
+        private void buttShowList_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.Navigate(new UsersDataPage());
+        }
+
+        private void buttAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.Navigate(new Registration());
         }
     }
 }

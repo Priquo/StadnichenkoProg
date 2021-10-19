@@ -10,7 +10,7 @@
     <Page.Resources>
         <ControlTemplate TargetType="Button" x:Key="CTbutt1">
             <Border>
-                <TextBlock Foreground="Magenta" Text="Записать"/>
+                <TextBlock Foreground="Magenta" Text="Записать" TextAlignment="Center"/>
             </Border>
         </ControlTemplate>
         <DataTemplate x:Key="cbCells">

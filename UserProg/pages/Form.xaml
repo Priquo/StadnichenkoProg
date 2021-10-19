@@ -15,16 +15,16 @@
                     <GroupBox Header="Считывание информации" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
                         <StackPanel>
                             <GroupBox Header="Имя" Margin="10 10 10 0">
-                                <TextBlock Name="textName" Height="30"/>
+                                <TextBlock Name="textName" Height="30" VerticalAlignment="Center"/>
                             </GroupBox>
                             <GroupBox Header="Дата рождения" Margin="10 10 10 0">
-                                <TextBlock Name="textDateBirth" Height="30"/>
+                                <TextBlock Name="textDateBirth" Height="30" VerticalAlignment="Center"/>
                             </GroupBox>
                             <GroupBox Header="Пол" Margin="10 10 10 0">
-                                <TextBlock Name="textGender" Height="30"/>
+                                <TextBlock Name="textGender" Height="30" VerticalAlignment="Center"/>
                             </GroupBox>
                             <GroupBox Header="Дополнительная информация" Margin="10 10 10 0">
-                                <TextBlock Name="textOtherInfo" Height="30"/>
+                                <TextBlock Name="textOtherInfo" Height="30" VerticalAlignment="Center"/>
                             </GroupBox>
                         </StackPanel>
                     </GroupBox>

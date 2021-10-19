@@ -22,13 +22,19 @@
                         <DataGridTextColumn Header="Пол" Binding="{Binding users.genders.gender}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="buttSaveCahanges" Content="Сохранить изменения"  Click="buttSaveCahanges_Click"/>
-                <TextBlock Text="Удаление пользователя из таблицы:"/>
-                <Button Name="buttDeleteUser" Content="Удалить выбранного пользователя" Click="buttDeleteUser_Click"/>
-                <Button Name="buttEditUser" Content="Редактировать выбранного пользователя" Click="buttEditUser_Click"/>
-
-                <Button Name="buttBack" Content="назад" IsCancel="True" Click="buttBack_Click"/>
-
+                <StackPanel HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Button x:Name="buttSaveCahanges" Content="Сохранить изменения"  Click="buttSaveCahanges_Click" Margin="15 10"/>
+                        <Button x:Name="buttShowList" Content="Показать списком"  Click="buttShowList_Click" Margin="15 10"/>
+                        <Button x:Name="buttAddUser" Content="Добавить пользователя"  Click="buttAddUser_Click" Margin="15 10"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Button Name="buttDeleteUser" Content="Удалить выбранного пользователя" Click="buttDeleteUser_Click" Margin="15 5"/>
+                        <Button Name="buttEditUser" Content="Редактировать выбранного пользователя" Click="buttEditUser_Click" Margin="15 5"/>
+                        <Button Name="buttBack" Content="назад" IsCancel="True" Click="buttBack_Click" Margin="15 5"/>
+                    </StackPanel>
+                </StackPanel>
+                              
             </StackPanel>
         </ScrollViewer>
     </Grid>
