@@ -101,6 +101,9 @@
     <Compile Include="users.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="usersimage.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="users_to_traits.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>

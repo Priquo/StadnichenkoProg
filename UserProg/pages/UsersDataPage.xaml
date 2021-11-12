@@ -43,7 +43,16 @@
             </GroupBox>
             <Button Name="btGo" Content="Вывести" Click="btGo_Click" Width="50" Margin="5"/>
             <Button Name="btReset" Content="Сброс" Click="btReset_Click" Width="50" Margin="5"/>
+            <TextBlock Text="Стр" VerticalAlignment="Center"/>
+            <TextBlock Name ="pred" Text="&lt;" VerticalAlignment="Center"  Margin="10 0 0 0"/>
+            <TextBlock Name ="num1" Text="1" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="num2" Text="2" VerticalAlignment="Center"/>
+            <TextBlock Name ="num3" Text="3" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="num4" Text="4" VerticalAlignment="Center"/>
+            <TextBlock Name ="num5" Text="5" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbnext" Text=">" VerticalAlignment="Center"  Margin="0 0 10 0"/>
             <Button x:Name="buttBack" Content="Назад" IsCancel="True" Click="buttBack_Click" Width="50" Margin="150 5 5 5"/>
+            
         </StackPanel>
         <ListBox Name="listbUsersList" ItemTemplate="{StaticResource DT_usersData}" Grid.Row="1"/>
         
