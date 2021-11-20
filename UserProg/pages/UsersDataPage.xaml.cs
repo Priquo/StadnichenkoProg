@@ -43,5 +43,9 @@ namespace UserProg.pages
         {
             LoadPages.MainFrame.GoBack();
         }
+        private void Filters(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

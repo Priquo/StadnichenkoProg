@@ -10,20 +10,24 @@
     <Page.Resources>
         <DataTemplate x:Key="DT_usersData">
             <StackPanel HorizontalAlignment="Stretch">
-                <GroupBox Header="Считывание информации" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
-                    <StackPanel>
-                        <GroupBox Header="Имя" Margin="10 10 10 0">
-                            <TextBlock Text="{Binding name}" Height="30" VerticalAlignment="Center"/>
-                        </GroupBox>
-                        <GroupBox Header="Дата рождения" Margin="10 10 10 0">
-                            <TextBlock Text="{Binding dr}" Height="30" VerticalAlignment="Center"/>
-                        </GroupBox>
-                        <GroupBox Header="Пол" Margin="10 10 10 0">
-                            <TextBlock Text="{Binding genders.gender}" Height="30" VerticalAlignment="Center"/>
-                        </GroupBox>
-                        <GroupBox Header="Дополнительная информация" Margin="10 10 10 0">
-                            <ListBox Name="listb_traits" Loaded="listb_traits_Loaded" Uid="{Binding id}"/>
-                        </GroupBox>
+                <GroupBox Header="Информация о пользователе" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <GroupBox Header="Имя">
+                                <TextBlock Text="{Binding name}" VerticalAlignment="Center"/>
+                            </GroupBox>
+                            <GroupBox Header="Дата рождения">
+                                <TextBlock Text="{Binding dr}" VerticalAlignment="Center"/>
+                            </GroupBox>
+                            <GroupBox Header="Пол">
+                                <TextBlock Text="{Binding genders.gender}" VerticalAlignment="Center"/>
+                            </GroupBox>
+                            <GroupBox Header="Личные качества">
+                                <ListBox Name="listb_traits" Loaded="listb_traits_Loaded" Uid="{Binding id}"/>
+                            </GroupBox>
+                        </StackPanel>                        
+                        <Image x:Name="userImage"/>
+                        <Button x:Name="btLoadImage" Content="Загрузить/изменить изображение"/>
                     </StackPanel>
                 </GroupBox>
             </StackPanel>
@@ -36,20 +40,21 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0"  Orientation="Horizontal">
             <GroupBox Header="от">
-                <TextBox Name="txtOT" Width="50"/>
+                <TextBox Name="txtOT" Width="25"/>
             </GroupBox>
             <GroupBox Header="до">
-                <TextBox Name="txtDO" Width="50"/>
+                <TextBox Name="txtDO" Width="25"/>
             </GroupBox>
+            <ComboBox Name="cbGender" Loaded="Filters"/>
             <Button Name="btGo" Content="Вывести" Click="btGo_Click" Width="50" Margin="5"/>
             <Button Name="btReset" Content="Сброс" Click="btReset_Click" Width="50" Margin="5"/>
             <TextBlock Text="Стр" VerticalAlignment="Center"/>
-            <TextBlock Name ="pred" Text="&lt;" VerticalAlignment="Center"  Margin="10 0 0 0"/>
-            <TextBlock Name ="num1" Text="1" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Name ="num2" Text="2" VerticalAlignment="Center"/>
-            <TextBlock Name ="num3" Text="3" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Name ="num4" Text="4" VerticalAlignment="Center"/>
-            <TextBlock Name ="num5" Text="5" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbPred" Text="&lt;" VerticalAlignment="Center"  Margin="10 0 0 0"/>
+            <TextBlock Name ="tbNum1" Text="1" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbNum2" Text="2" VerticalAlignment="Center"/>
+            <TextBlock Name ="tbNum3" Text="3" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbNum4" Text="4" VerticalAlignment="Center"/>
+            <TextBlock Name ="tbNum5" Text="5" VerticalAlignment="Center" Margin="5"/>
             <TextBlock Name ="tbnext" Text=">" VerticalAlignment="Center"  Margin="0 0 10 0"/>
             <Button x:Name="buttBack" Content="Назад" IsCancel="True" Click="buttBack_Click" Width="50" Margin="150 5 5 5"/>
             
