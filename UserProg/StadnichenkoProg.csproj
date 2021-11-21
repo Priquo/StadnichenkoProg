@@ -80,6 +80,7 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LoadPages.cs" />
+    <Compile Include="PageChanger.cs" />
     <Compile Include="pages\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>

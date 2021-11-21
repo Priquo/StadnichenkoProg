@@ -25,7 +25,7 @@
                             <GroupBox Header="Личные качества">
                                 <ListBox Name="listb_traits" Loaded="listb_traits_Loaded" Uid="{Binding id}"/>
                             </GroupBox>
-                        </StackPanel>                        
+                        </StackPanel>
                         <Image x:Name="userImage"/>
                         <Button x:Name="btLoadImage" Content="Загрузить/изменить изображение"/>
                     </StackPanel>
@@ -36,7 +36,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="397*"/>
+            <RowDefinition Height="183*"/>
+            <RowDefinition Height="22*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0"  Orientation="Horizontal">
             <GroupBox Header="от">
@@ -45,21 +46,31 @@
             <GroupBox Header="до">
                 <TextBox Name="txtDO" Width="25"/>
             </GroupBox>
-            <ComboBox Name="cbGender" Loaded="Filters"/>
+            <GroupBox Header="Выберите пол">
+                <ComboBox Name="cbGender" SelectionChanged="Filters"/>
+            </GroupBox>
+            <GroupBox Header="Поиск по имени">
+                <TextBox x:Name="txtbSearchName" TextChanged="Filters"/>
+            </GroupBox>
             <Button Name="btGo" Content="Вывести" Click="btGo_Click" Width="50" Margin="5"/>
-            <Button Name="btReset" Content="Сброс" Click="btReset_Click" Width="50" Margin="5"/>
+            <Button Name="btReset" Content="Сброс" Click="btReset_Click" Width="50" Margin="5"/>          
+            
+        </StackPanel>
+        <ListBox Name="listbUsersList" ItemTemplate="{StaticResource DT_usersData}" Grid.Row="1" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock Text="Стр" VerticalAlignment="Center"/>
-            <TextBlock Name ="tbPred" Text="&lt;" VerticalAlignment="Center"  Margin="10 0 0 0"/>
+            <TextBlock Name ="tbPred" Text="&lt;" VerticalAlignment="Center" Margin="10 0 0 0"/>
             <TextBlock Name ="tbNum1" Text="1" VerticalAlignment="Center" Margin="5"/>
             <TextBlock Name ="tbNum2" Text="2" VerticalAlignment="Center"/>
             <TextBlock Name ="tbNum3" Text="3" VerticalAlignment="Center" Margin="5"/>
             <TextBlock Name ="tbNum4" Text="4" VerticalAlignment="Center"/>
             <TextBlock Name ="tbNum5" Text="5" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Name ="tbnext" Text=">" VerticalAlignment="Center"  Margin="0 0 10 0"/>
+            <TextBlock Name ="tbnext" Text=">" VerticalAlignment="Center"  Margin="0 0 50 0"/>
+            <GroupBox Header="Показать на странице">
+                <TextBox x:Name="txtbShowPages" TextChanged="txtbShowPages_TextChanged"/>
+            </GroupBox>
             <Button x:Name="buttBack" Content="Назад" IsCancel="True" Click="buttBack_Click" Width="50" Margin="150 5 5 5"/>
-            
         </StackPanel>
-        <ListBox Name="listbUsersList" ItemTemplate="{StaticResource DT_usersData}" Grid.Row="1"/>
-        
+
     </Grid>
 </Page>
