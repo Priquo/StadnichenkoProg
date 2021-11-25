@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:UserProg.pages"
+      xmlns:local="clr-namespace:UserProg.pages" xmlns:userprog="clr-namespace:UserProg" d:DataContext="{d:DesignInstance Type=userprog:PageChanger}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Данные пользователя">
@@ -59,13 +59,13 @@
         <ListBox Name="listbUsersList" ItemTemplate="{StaticResource DT_usersData}" Grid.Row="1" />
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock Text="Стр" VerticalAlignment="Center"/>
-            <TextBlock Name ="tbPred" Text="&lt;" VerticalAlignment="Center" Margin="10 0 0 0"/>
-            <TextBlock Name ="tbNum1" Text="1" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Name ="tbNum2" Text="2" VerticalAlignment="Center"/>
-            <TextBlock Name ="tbNum3" Text="3" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Name ="tbNum4" Text="4" VerticalAlignment="Center"/>
-            <TextBlock Name ="tbNum5" Text="5" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Name ="tbnext" Text=">" VerticalAlignment="Center"  Margin="0 0 50 0"/>
+            <TextBlock Name ="tbPred" MouseDown = "ChangePage_MouseDown" Text="&lt;" VerticalAlignment="Center" Margin="10 0 0 0"/>
+            <TextBlock Name ="tbNum1" MouseDown = "ChangePage_MouseDown" Text="{Binding Path=NPage[0], StringFormat={}{0,3}}" Visibility="{Binding Path=Visibility[0]}" Foreground="{Binding Path=Foreground[0]}" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbNum2" MouseDown = "ChangePage_MouseDown" Text="{Binding Path=NPage[1], StringFormat={}{0,3}}" Visibility="{Binding Path=Visibility[1]}" Foreground="{Binding Path=Foreground[1]}" VerticalAlignment="Center"/>
+            <TextBlock Name ="tbNum3" MouseDown = "ChangePage_MouseDown" Text="{Binding Path=NPage[2], StringFormat={}{0,3}}" Visibility="{Binding Path=Visibility[2]}" Foreground="{Binding Path=Foreground[2]}" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbNum4" MouseDown = "ChangePage_MouseDown" Text="{Binding Path=NPage[3], StringFormat={}{0,3}}" Visibility="{Binding Path=Visibility[3]}" Foreground="{Binding Path=Foreground[3]}" VerticalAlignment="Center"/>
+            <TextBlock Name ="tbNum5" MouseDown = "ChangePage_MouseDown" Text="{Binding Path=NPage[4], StringFormat={}{0,3}}" Visibility="{Binding Path=Visibility[4]}" Foreground="{Binding Path=Foreground[4]}" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Name ="tbnext" MouseDown = "ChangePage_MouseDown" Text=">" VerticalAlignment="Center"  Margin="0 0 50 0"/>
             <GroupBox Header="Показать на странице">
                 <TextBox x:Name="txtbShowPages" TextChanged="txtbShowPages_TextChanged"/>
             </GroupBox>

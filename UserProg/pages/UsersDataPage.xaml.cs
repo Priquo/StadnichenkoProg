@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace UserProg.pages
 {
@@ -10,6 +11,7 @@ namespace UserProg.pages
     {
         List<users> users;
         List<users> lu;
+        PageChanger pch = new PageChanger();
         public UsersDataPage()
         {
             InitializeComponent();
@@ -19,6 +21,7 @@ namespace UserProg.pages
             cbGender.SelectedValuePath = "id";
             cbGender.DisplayMemberPath = "gender";
             lu = users;
+            DataContext = pch;
         }
 
         private void listb_traits_Loaded(object sender, RoutedEventArgs e)
@@ -78,8 +81,39 @@ namespace UserProg.pages
                 MessageBox.Show("Да и черт с ним");
             }
         }
+        private void ChangePage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock tb = (TextBlock)sender;
+            switch(tb.Name)
+            {
+                case "tbPred":
+                    pch.CurrentPage--;
+                    break;
+                case "tbnext":
+                    pch.CurrentPage++;
+                    break;
+                default:
+                    pch.CurrentPage = Convert.ToInt32(tb.Text);
+                    break;
+            }
+            listbUsersList.ItemsSource = lu.Skip(pch.CurrentPage * pch.CountPageOnList - pch.CountPageOnList).Take(pch.CountPageOnList).ToList();
+        }
 
         private void txtbShowPages_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                pch.CountPageOnList = Convert.ToInt32(txtbShowPages.Text);
+            }
+            catch
+            {                
+                pch.CountPageOnList = lu.Count;
+            }
+            pch.Countlist = users.Count;
+            listbUsersList.ItemsSource = lu.Skip(0).Take(pch.CountPageOnList).ToList();
+        }
+
+        private void tbPred_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 
         }
