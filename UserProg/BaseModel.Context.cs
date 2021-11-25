@@ -25,7 +25,6 @@ namespace UserProg
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<auth> auth { get; set; }
         public virtual DbSet<genders> genders { get; set; }
         public virtual DbSet<roles> roles { get; set; }

@@ -1,8 +1,14 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using Image = System.Windows.Controls.Image;
 
 namespace UserProg.pages
 {
@@ -53,6 +59,7 @@ namespace UserProg.pages
             txtDO.Text = "";
             txtbSearchName.Text = "";
             cbGender.SelectedItem = null;
+            txtbShowPages.Text = "";
         }
 
         private void buttBack_Click(object sender, RoutedEventArgs e)
@@ -120,13 +127,23 @@ namespace UserProg.pages
 
         private void userImage_Loaded(object sender, RoutedEventArgs e)
         {
-            Image IMG = sender as Image;
+            System.Windows.Controls.Image IMG = sender as Image;
             int ind = Convert.ToInt32(IMG.Uid);
             users user = BaseConnect.BaseModel.users.FirstOrDefault(x => x.id == ind);
+            usersimage uIm = BaseConnect.BaseModel.usersimage.FirstOrDefault(x => x.id_user == ind);
             BitmapImage image = new BitmapImage();
-            if(1 + 1 < 1)
+            if(uIm != null)
             {
-
+                if (uIm.path != null)
+                {
+                    image = new BitmapImage(new Uri(uIm.path, UriKind.Relative));
+                }
+                else
+                {
+                    image.BeginInit();
+                    image.StreamSource = new MemoryStream(uIm.image);
+                    image.EndInit();
+                }
             }
             else
             {
@@ -144,6 +161,31 @@ namespace UserProg.pages
                 }
             }
             IMG.Source = image;
+            IMG.MaxHeight = 400;
+        }
+
+        private void btLoadImage_Click(object sender, RoutedEventArgs e)
+        {
+            Button butt = (Button)sender;
+            int ind = Convert.ToInt32(butt.Uid);
+            OpenFileDialog open = new OpenFileDialog();
+            open.DefaultExt = ".png";
+            open.Filter = "Изорбражения |*.jpg;*.png";
+            var success = open.ShowDialog();
+            if ((bool)success)
+            {
+                System.Drawing.Image UserImage = System.Drawing.Image.FromFile(open.FileName);//создаем изображение
+                ImageConverter IC = new ImageConverter();//конвертер изображения в массив байт
+                byte[] ByteArr = (byte[])IC.ConvertTo(UserImage, typeof(byte[]));//непосредственно конвертация
+                usersimage UI = new usersimage() { id_user = ind, image = ByteArr };//создаем новый объект usersimage
+                BaseConnect.BaseModel.usersimage.Add(UI);//добавляем его в модель
+                BaseConnect.BaseModel.SaveChanges();//синхронизируем с базой
+                MessageBox.Show("картинка пользователя добавлена в базу");
+            }
+            else
+            {
+                MessageBox.Show("картинка не была выбрана");
+            }
         }
     }
 }
