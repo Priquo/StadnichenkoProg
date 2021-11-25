@@ -26,8 +26,10 @@
                                 <ListBox Name="listb_traits" Loaded="listb_traits_Loaded" Uid="{Binding id}"/>
                             </GroupBox>
                         </StackPanel>
-                        <Image x:Name="userImage"/>
-                        <Button x:Name="btLoadImage" Content="Загрузить/изменить изображение"/>
+                        <StackPanel Orientation="Vertical">
+                            <Image x:Name="userImage" Loaded="userImage_Loaded" Uid="{Binding id}"/>
+                            <Button x:Name="btLoadImage" Content="Загрузить/изменить изображение"/>
+                        </StackPanel>                        
                     </StackPanel>
                 </GroupBox>
             </StackPanel>
@@ -35,7 +37,7 @@
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="183*"/>
             <RowDefinition Height="22*"/>
         </Grid.RowDefinitions>

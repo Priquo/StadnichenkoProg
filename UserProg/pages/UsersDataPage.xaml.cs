@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace UserProg.pages
 {
@@ -64,6 +63,7 @@ namespace UserProg.pages
         {
             try
             {
+                lu = users.ToList();
                 //фильтр по полу
                 if (cbGender.SelectedValue != null)
                 {
@@ -116,6 +116,34 @@ namespace UserProg.pages
         private void tbPred_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 
+        }
+
+        private void userImage_Loaded(object sender, RoutedEventArgs e)
+        {
+            Image IMG = sender as Image;
+            int ind = Convert.ToInt32(IMG.Uid);
+            users user = BaseConnect.BaseModel.users.FirstOrDefault(x => x.id == ind);
+            BitmapImage image = new BitmapImage();
+            if(1 + 1 < 1)
+            {
+
+            }
+            else
+            {
+                switch(user.gender)
+                {
+                    case 1:
+                        image = new BitmapImage(new Uri(@"/images/genders/boy.png", UriKind.Relative));
+                        break;
+                    case 2:
+                        image = new BitmapImage(new Uri(@"/images/genders/girl.png", UriKind.Relative));
+                        break;
+                    default:
+                        image = new BitmapImage(new Uri(@"/images/genders/other.png", UriKind.Relative));
+                        break;
+                }
+            }
+            IMG.Source = image;
         }
     }
 }
