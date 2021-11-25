@@ -120,11 +120,6 @@ namespace UserProg.pages
             listbUsersList.ItemsSource = lu.Skip(0).Take(pch.CountPageOnList).ToList();
         }
 
-        private void tbPred_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
-        }
-
         private void userImage_Loaded(object sender, RoutedEventArgs e)
         {
             System.Windows.Controls.Image IMG = sender as Image;
@@ -177,7 +172,12 @@ namespace UserProg.pages
                 System.Drawing.Image UserImage = System.Drawing.Image.FromFile(open.FileName);//создаем изображение
                 ImageConverter IC = new ImageConverter();//конвертер изображения в массив байт
                 byte[] ByteArr = (byte[])IC.ConvertTo(UserImage, typeof(byte[]));//непосредственно конвертация
-                usersimage UI = new usersimage() { id_user = ind, image = ByteArr };//создаем новый объект usersimage
+                List<usersimage> images = BaseConnect.BaseModel.usersimage.Where(x => x.id_user == ind).ToList();
+                usersimage UI  = new usersimage() { id_user = ind, image = ByteArr };
+                if (images.Count == 0)
+                {
+                    UI.avatar = true;
+                }
                 BaseConnect.BaseModel.usersimage.Add(UI);//добавляем его в модель
                 BaseConnect.BaseModel.SaveChanges();//синхронизируем с базой
                 MessageBox.Show("картинка пользователя добавлена в базу");
@@ -185,6 +185,20 @@ namespace UserProg.pages
             else
             {
                 MessageBox.Show("картинка не была выбрана");
+            }
+        }
+
+        private void btOpenGalery_Click(object sender, RoutedEventArgs e)
+        {
+            Button butt = (Button)sender;
+            int ind = Convert.ToInt32(butt.Uid);
+            List<usersimage> images = BaseConnect.BaseModel.usersimage.Where(x => x.id_user == ind).ToList();
+            if (images.Count == 0)
+                MessageBox.Show("У пользователя нет картинок");
+            else
+            {
+                Window UserGaleryWindow = new UserGaleryWindow(images);
+                UserGaleryWindow.Show();
             }
         }
     }

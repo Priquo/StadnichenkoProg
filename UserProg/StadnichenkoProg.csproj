@@ -80,6 +80,7 @@
     <Compile Include="genders.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ImageChanger.cs" />
     <Compile Include="LoadPages.cs" />
     <Compile Include="PageChanger.cs" />
     <Compile Include="pages\AdminPage.xaml.cs">
@@ -96,6 +97,9 @@
     </Compile>
     <Compile Include="traits.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserGaleryWindow.xaml.cs">
+      <DependentUpon>UserGaleryWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="users.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
@@ -145,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserGaleryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

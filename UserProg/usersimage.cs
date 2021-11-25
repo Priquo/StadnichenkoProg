@@ -21,5 +21,10 @@ namespace UserProg
         public bool avatar { get; set; }
     
         public virtual users users { get; set; }
+
+        internal void BeginInit()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

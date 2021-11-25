@@ -29,6 +29,7 @@
                         <StackPanel Orientation="Vertical">
                             <Image x:Name="userImage" Loaded="userImage_Loaded" Uid="{Binding id}"/>
                             <Button x:Name="btLoadImage" Content="Загрузить/изменить изображение" Click="btLoadImage_Click" Uid="{Binding id}"/>
+                            <Button Name="btOpenGalery" Content="Открыть галерею изображений" Click="btOpenGalery_Click" Uid="{Binding id}"/>
                         </StackPanel>                        
                     </StackPanel>
                 </GroupBox>

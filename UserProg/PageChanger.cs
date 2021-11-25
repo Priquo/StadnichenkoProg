@@ -12,7 +12,7 @@ namespace UserProg
         public event PropertyChangedEventHandler PropertyChanged;
         static int countitems = 5;
         public int[] NPage { get; set; } = new int[countitems];//номер страницы, при нажатии на соответствующую кнопку    
-        public string[] Visible { get; set; } = new string[countitems];//Массив свойст, отвечающий за видимость объекта Visible - видимый, Hidden - скрытый
+        public string[] Visibility { get; set; } = new string[countitems];//Массив свойст, отвечающий за видимость объекта Visible - видимый, Hidden - скрытый
         public string[] Foreground { get; set; } = new string[countitems];//Массив свойств, отвечающий за изменение цвета текущей страницы
         int countPages;
         public int CountPages
@@ -23,8 +23,8 @@ namespace UserProg
                 countPages = value;
                 for (int i = 0; i < countitems; i++)
                 {
-                    if (CountPages <= i) Visible[i] = "Hidden";
-                    else Visible[i] = "Visible";
+                    if (CountPages <= i) Visibility[i] = "Hidden";
+                    else Visibility[i] = "Visible";
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace UserProg
         {
             for (int i = 0; i < countitems; i++)
             {
-                Visible[i] = "Visible";
+                Visibility[i] = "Visible";
                 NPage[i] = i + 1;
                 Foreground[i] = "Purple";
             }

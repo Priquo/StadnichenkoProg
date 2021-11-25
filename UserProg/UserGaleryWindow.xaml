@@ -1,0 +1,29 @@
+﻿<Window x:Class="UserProg.UserGaleryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserProg"
+        mc:Ignorable="d"
+        Title="Галерея изображений" Height="420" Width="650">
+    <Window.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="342*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">
+            <Image x:Name="imgUsers" Loaded="imgUsers_Loaded"/>            
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock x:Name="tbCountImg" Text="{Binding Path=CurrentImage, StringFormat=Текущее изображение: {0,3}}" HorizontalAlignment="Left"/>
+            <Button x:Name="btPred" Content="Предыдущее" Margin="50 0 50 0" Click="ChangeImage_Click"/>
+            <Button x:Name="btNext" Content="Следующее" Margin="50 0 0 0" Click="ChangeImage_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
