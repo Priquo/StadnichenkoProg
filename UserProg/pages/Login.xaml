@@ -7,7 +7,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
-
+    <Page.Resources>
+        <ControlTemplate TargetType="Button" x:Key="CTbuttCod">
+            <Border>
+                <Image Source="../images/reset.png"/>
+            </Border>
+        </ControlTemplate>
+        <DataTemplate x:Key="cbCells">
+            <CheckBox Content="{Binding trait}"/>
+        </DataTemplate>
+    </Page.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" >
             <StackPanel MaxWidth="400px">
@@ -21,6 +30,12 @@
                         </GroupBox>
                     </StackPanel>
                 </GroupBox>
+                <GroupBox Header="Введите временный код">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="tboxCod" Width="100" Height="20" Margin="8 0"/>
+                        <Button Template="{StaticResource CTbuttCod}" x:Name="buttResetCod" Width="20" Height="20" IsEnabled="False" Click="buttResetCod_Click"/>
+                    </StackPanel>
+                </GroupBox>                
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="buttonLogin" Content="Войти" Click="buttonLogin_Click" IsDefault="True" Width="100px" Margin="15 10"/>
                     <Button x:Name="buttonReg" Content="Зарегистрироваться" Click="buttonReg_Click" Width="150px" Margin="100 10"/>

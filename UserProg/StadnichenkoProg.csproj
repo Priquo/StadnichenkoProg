@@ -208,6 +208,7 @@
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\reset.png" />
     <Resource Include="images\genders\boy.png" />
     <Resource Include="images\genders\girl.png" />
     <Resource Include="images\genders\other.png" />
