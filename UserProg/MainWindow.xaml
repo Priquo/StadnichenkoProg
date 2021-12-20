@@ -33,7 +33,11 @@
             <Label Style="{StaticResource Title}" DockPanel.Dock="Right" HorizontalContentAlignment="Center">Невероятно, но факт</Label>
         </DockPanel>        
         <Image Grid.Row="1" Source="images/banners/ban.jpg"></Image>
-        <TextBlock Text="Только сегодня, сеанс психотерапевта всего за $3..." Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource reklama}"/>
+        <DockPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <Slider DockPanel.Dock="Left"  x:Name="slVolume" Width="100" Maximum="1" Minimum="0" SmallChange=".1" LargeChange=".1" Value="0.5" Margin="20 0"/>     
+            <MediaElement DockPanel.Dock="Right" Name="media_bckgrAudio" Source="media/BebopovskyMirrors.mp3" Volume="{Binding ElementName=slVolume, Path=Value}"/>
+            <TextBlock  Text="Только сегодня, сеанс психотерапевта всего за $3..."  Style="{StaticResource reklama}"/>
+        </DockPanel>
         <Frame x:Name="pages" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
