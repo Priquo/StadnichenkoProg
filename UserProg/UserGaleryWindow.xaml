@@ -23,6 +23,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <TextBlock x:Name="tbCountImg" Text="{Binding Path=CurrentImage, StringFormat=Текущее изображение: {0,3}}" HorizontalAlignment="Left"/>
             <Button x:Name="btPred" Content="Предыдущее" Margin="50 0 50 0" Click="ChangeImage_Click"/>
+            <Button x:Name="btSetAvatar" Content="Обновить аватар" Click="ChangeImage_Click"/>
             <Button x:Name="btNext" Content="Следующее" Margin="50 0 0 0" Click="ChangeImage_Click"/>
         </StackPanel>
     </Grid>

@@ -86,6 +86,9 @@
     <Compile Include="pages\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\Diagramm.xaml.cs">
+      <DependentUpon>Diagramm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\UsersDataPage.xaml.cs">
       <DependentUpon>UsersDataPage.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="pages\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\Diagramm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

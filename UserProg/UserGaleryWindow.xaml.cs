@@ -45,6 +45,9 @@ namespace UserProg
                 case "btNext":
                     ich.CurrentImage++;
                     break;
+                case "btSetAvatar":
+                    MessageBox.Show("Нам очень жаль, но это пока не работает...");
+                    break;
             }
             imgUsers.Source = ich.bitmaps[ich.CurrentImage];
         }

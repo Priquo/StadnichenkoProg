@@ -11,7 +11,8 @@ namespace UserProg
         public MainWindow()
         {
             InitializeComponent();
-            pages.Navigate(new Login());
+            //pages.Navigate(new Login());
+            pages.Navigate(new Diagramm());
             LoadPages.MainFrame = pages;
             BaseConnect.BaseModel = new Entities();
         }
