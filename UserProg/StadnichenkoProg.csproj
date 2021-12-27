@@ -215,6 +215,9 @@
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="media\BebopovskyMirrors.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="images\reset.png" />
     <Resource Include="images\genders\boy.png" />
     <Resource Include="images\genders\girl.png" />
