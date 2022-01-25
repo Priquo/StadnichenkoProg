@@ -16,7 +16,7 @@ namespace UserProg.pages
     {
         List<users> users;
         List<users> lu;
-        PageChanger pch = new PageChanger();
+        PageChanger pch = new PageChanger();        
         public UsersDataPage()
         {
             InitializeComponent();

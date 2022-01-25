@@ -12,7 +12,7 @@ namespace UserProg
         {
             InitializeComponent();
             //pages.Navigate(new Login());
-            pages.Navigate(new Diagramm());
+            pages.Navigate(new Login());
             LoadPages.MainFrame = pages;
             BaseConnect.BaseModel = new Entities();
         }

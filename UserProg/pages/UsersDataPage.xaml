@@ -8,9 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Данные пользователя">
     <Page.Resources>
+        <Style TargetType="GroupBox" x:Key="SPstyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding TooOld}" Value="True">
+                    <Setter Property="Background" Value="LightPink"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <DataTemplate x:Key="DT_usersData">
             <StackPanel HorizontalAlignment="Stretch">
-                <GroupBox Header="Информация о пользователе" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
+                <GroupBox Header="Информация о пользователе" Style="{StaticResource SPstyle}" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" MinWidth="200" >
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
                             <GroupBox Header="Имя">
@@ -34,7 +41,7 @@
                     </StackPanel>
                 </GroupBox>
             </StackPanel>
-        </DataTemplate>
+        </DataTemplate>        
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
